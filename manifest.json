@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Leboncoin ad reload",
+  "description": "Publish your leboncoin ad again in one click",
+  "version": "0.0.0",
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [ {
+    "js": ["./node_modules/jquery/dist/jquery.min.js","main.js"],
+    "matches": [ "https://www.linkedin.com/*" ]
+  }],
+  "browser_action": {
+    "default_icon" : "128.png"
+  },
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128" : "128.png"
+  }
+}
